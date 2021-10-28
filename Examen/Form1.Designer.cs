@@ -29,34 +29,48 @@ namespace Examen
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbMostrar = new System.Windows.Forms.RichTextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtbMostrar
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(21, 32);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(767, 291);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbMostrar.Location = new System.Drawing.Point(21, 32);
+            this.rtbMostrar.Name = "rtbMostrar";
+            this.rtbMostrar.Size = new System.Drawing.Size(767, 291);
+            this.rtbMostrar.TabIndex = 0;
+            this.rtbMostrar.Text = "";
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(334, 353);
+            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.btnNuevo.Location = new System.Drawing.Point(235, 352);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(109, 26);
             this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "Activo nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(441, 348);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(106, 30);
+            this.btnMostrar.TabIndex = 2;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.BtnMostrar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbMostrar);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -66,8 +80,9 @@ namespace Examen
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbMostrar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }
 

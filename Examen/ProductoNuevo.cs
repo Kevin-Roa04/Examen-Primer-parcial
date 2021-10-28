@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Appcore.Services;
+using Dominio;
 using Dominio.Enums;
 using Infraestructura;
 using System;
@@ -15,9 +16,10 @@ namespace Examen
 {
     public partial class ProductoNuevo : Form
     {
-        ActivoFijoModel activos;
-        public ProductoNuevo()
+        private IService<ActivoFijo> service;
+        public ProductoNuevo(IService<ActivoFijo> service)
         {
+            this.service = service;
             InitializeComponent();
         }
 
@@ -46,7 +48,7 @@ namespace Examen
                     TipoActivo = (TipoActivo) cmbTipoActivo.SelectedIndex,
                     MetodosDepreciacion = (MetodosDepreciacion) cmbMetodoDepreciacion.SelectedIndex
                 };
-                activos.Add(Activo);
+                service.Create(Activo);
             }
         }
 
